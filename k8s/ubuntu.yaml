@@ -20,4 +20,4 @@ spec:
           image: ubuntu:latest
           # Just spin & wait forever
           command: [ "/bin/bash", "-c", "--" ]
-          args: [ "while true; do sleep 30; done;" ]
+          args: [ "while true; do echo 'hi' && sleep 30; done;" ]
