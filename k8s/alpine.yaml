@@ -7,7 +7,13 @@ metadata:
 #  namespace: just-testing
 # test another namespace, what will happen then?
 # a namespace which does not exist is not being created.. test an already existing though..
-  namespace: default
+# => using any existing workspace works.
+#  namespace: default
+
+# results..
+# so.. adding no namespace will add it into the given one by the app-creation.
+# using a non-existing will not work and abort the sync-process.
+# using any existing one will just use that one!
   labels:
     app: alpine-test
 spec:
