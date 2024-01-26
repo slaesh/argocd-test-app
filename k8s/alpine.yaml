@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpine-test
+# test it without a namespace.. will argocd put it into the given one anyways? since we created a namespace for this "app"?
+#  namespace: just-testing
+  labels:
+    app: alpine-test
+spec:
+  selector:
+    matchLabels:
+      app: alpine-test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: alpine-test
+    spec:
+      containers:
+        - name: alpine-test
+          image: alpine:latest
+          # Just spin & wait forever
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "while true; do echo 'hi' && sleep 30; done;" ]
