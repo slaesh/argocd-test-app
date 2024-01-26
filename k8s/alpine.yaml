@@ -6,7 +6,8 @@ metadata:
 # => "works".. it is placed within the namespace given by that created app!
 #  namespace: just-testing
 # test another namespace, what will happen then?
-  namespace: just-testing2
+# a namespace which does not exist is not being created.. test an already existing though..
+  namespace: default
   labels:
     app: alpine-test
 spec:
