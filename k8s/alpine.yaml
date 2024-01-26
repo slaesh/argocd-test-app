@@ -20,5 +20,5 @@ spec:
         - name: alpine-test
           image: alpine:latest
           # Just spin & wait forever
-          command: [ "/bin/bash", "-c", "--" ]
+          command: [ "/bin/sh", "-c", "--" ]
           args: [ "while true; do echo 'hi' && sleep 30; done;" ]
