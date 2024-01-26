@@ -3,7 +3,10 @@ kind: Deployment
 metadata:
   name: alpine-test
 # test it without a namespace.. will argocd put it into the given one anyways? since we created a namespace for this "app"?
+# => "works".. it is placed within the namespace given by that created app!
 #  namespace: just-testing
+# test another namespace, what will happen then?
+  namespace: just-testing2
   labels:
     app: alpine-test
 spec:
